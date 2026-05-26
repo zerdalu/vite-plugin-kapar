@@ -1,16 +1,17 @@
-# kapar 
+# vite-plugin-kapar 
 
-**kapar** is a Vite dev-plugin for taking screenshots and recording `.webm` videos of your web application directly from the DOM.
+**vite-plugin-kapar** is a Vite dev-plugin for taking screenshots and recording `.webm` videos of your web application directly from the DOM.
 
-It injects a sleek React-based widget into your application during development, leveraging the experimental **HTML-in-Canvas API** to achieve zero-permission, pixel-perfect screen captures. It completely bypasses clunky `getDisplayMedia` screen-sharing prompts.
+It injects a sleek floating widget into your application during development, leveraging the experimental **HTML-in-Canvas API** to achieve zero-permission screen captures. It completely bypasses clunky `getDisplayMedia` screen-sharing prompts.
 
 As a bonus, it includes a **Grease Pencil (Pen) feature**, allowing you to annotate your screen in real-time while recording demos or finding bugs.
 
 ## Key Features
 - **Vite Dev Plugin:** Injects seamlessly during development mode (`apply: 'serve'`), zero impact on production builds.
+- **Framework Agnostic:** Bundles its UI runtime internally—works out of the box with Vue, Svelte, React, Solid, or Vanilla JS projects.
 - **Zero Permission Prompts:** No "Share your screen" popups.
 - **Pixel-Perfect Scaling:** Define exact capture dimensions regardless of your actual viewport.
-- **Fully Interactive:** The captured DOM elements remain 100% interactive (clicks, hovers, inputs).
+- **Fully Interactive:** The captured DOM elements remain interactive (clicks, hovers, inputs).
 - **Built-in Pen Tool:** Draw over your application in real-time.
 
 ---
@@ -28,7 +29,7 @@ Because the HTML-in-Canvas API is currently experimental, this package requires 
 Install the package via NPM as a development dependency:
 
 ```bash
-npm install kapar -D
+npm install vite-plugin-kapar -D
 ```
 
 ---
@@ -39,17 +40,12 @@ Add the plugin to your `vite.config.ts`.
 
 ```typescript
 import { defineConfig } from 'vite';
-import { kaparPlugin } from 'kapar';
+import { kaparPlugin } from 'vite-plugin-kapar';
 
 export default defineConfig({
   plugins: [
     kaparPlugin({
-      targetSelector: '#app-wrapper', // Important: target your app's main wrapper
-      width: 1200, 
-      height: 800,
-      fps: 60,
-      penColor: '#ff1493',
-      penWidth: 4
+      targetSelector: '#app-wrapper' // Optional: target your app's main wrapper (defaults to #app, #root, or body)
     })
   ]
 });
@@ -75,7 +71,7 @@ npm link
 **2. Link to a local test project:**
 ```bash
 # Inside your test project folder (e.g., a blank Vite app):
-npm link kapar
+npm link vite-plugin-kapar
 ```
 
 ---
