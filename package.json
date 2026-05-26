@@ -1,0 +1,48 @@
+{
+  "name": "vite-plugin-kapar",
+  "version": "0.1.0",
+  "description": "Screen recording and screenshot taking via the HTML-in-Canvas API (Vite Plugin)",
+  "author": "zerdalu",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "prepublishOnly": "npm run build",
+    "çat": "npm run dev",
+    "kur": "npm run build"
+  },
+  "keywords": [
+    "html-in-canvas",
+    "screen-record",
+    "screenshot",
+    "canvas",
+    "vite",
+    "vite-plugin"
+  ],
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}

@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+#kapar-root {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    user-select: none;
+    pointer-events: auto !important; /* Required to allow button interactions within the zero-size light DOM container */
+
+    /* Material Design/Custom Color Tokens */
+    --on-error-container: #ffdad6;
+    --tertiary-container: #e2e2e2;
+    --surface-dim: #131315;
+    --surface-variant: #353437;
+    --secondary-container: #45464e;
+    --on-surface-variant: #c4c7c8;
+    --outline-variant: #444748;
+    --on-secondary-container: #b4b4bd;
+    --on-tertiary-fixed: #1a1c1c;
+    --primary-fixed-dim: #c6c6c7;
+    --error-container: #93000a;
+    --error: #ffb4ab;
+    --on-error: #690005;
+    --on-tertiary: #2f3131;
+    --primary: #ffffff;
+    --inverse-primary: #5d5f5f;
+    --on-tertiary-fixed-variant: #454747;
+    --secondary-fixed: #e2e1eb;
+    --tertiary: #ffffff;
+    --surface-bright: #39393b;
+    --primary-container: #e2e2e2;
+    --inverse-on-surface: #313032;
+    --outline: #8e9192;
+    --secondary: #c6c6cf;
+    --on-secondary-fixed-variant: #45464e;
+    --surface-container-lowest: #0e0e10;
+    --tertiary-fixed-dim: #c6c6c7;
+    --surface: #131315;
+    --on-primary: #2f3131;
+    --on-primary-container: #636565;
+    --on-primary-fixed-variant: #454747;
+    --on-secondary-fixed: #1a1b22;
+    --surface-container-highest: #353437;
+    --on-background: #e5e1e4;
+    --surface-tint: #c6c6c7;
+    --surface-container-high: #2a2a2c;
+    --inverse-surface: #e5e1e4;
+    --tertiary-fixed: #e2e2e2;
+    --on-secondary: #2f3037;
+    --primary-fixed: #e2e2e2;
+    --secondary-fixed-dim: #c6c6cf;
+    --on-primary-fixed: #1a1c1c;
+    --background: #131315;
+    --on-tertiary-container: #636565;
+    --surface-container: #201f22;
+    --surface-container-low: #1c1b1d;
+    --on-surface: #e5e1e4;
+
+    /* Redesigned Layout Spacings */
+    --compact-padding: 8px;
+    --unit: 4px;
+    --margin-md: 24px;
+    --margin-sm: 12px;
+    --standard-padding: 12px;
+    --gutter: 16px;
+}
+
+#kapar-root * {
+    box-sizing: border-box;
+}
+
+#kapar-root .bg-surface-container-highest {
+    background-color: var(--surface-container-highest);
+}
+#kapar-root .border-outline-variant {
+    border-color: var(--outline-variant);
+}
+#kapar-root .p-unit {
+    padding: var(--unit);
+}
+#kapar-root .gap-unit {
+    gap: var(--unit);
+}
+#kapar-root .bg-surface-container-low {
+    background-color: var(--surface-container-low);
+}
+#kapar-root .bg-surface-variant {
+    background-color: var(--surface-variant) !important;
+}
+#kapar-root .text-primary {
+    color: var(--primary) !important;
+}
+#kapar-root .text-on-surface-variant {
+    color: var(--on-surface-variant) !important;
+}
+#kapar-root .border-transparent {
+    border-color: transparent !important;
+}
+#kapar-root .hover\:text-primary:hover {
+    color: var(--primary) !important;
+}
+#kapar-root .hover\:bg-surface-variant\/50:hover {
+    background-color: rgba(53, 52, 55, 0.5) !important;
+}
+#kapar-root .hover\:bg-surface-variant:hover {
+    background-color: var(--surface-variant) !important;
+}
+#kapar-root .bg-outline-variant {
+    background-color: var(--outline-variant);
+}
+#kapar-root .bg-primary {
+    background-color: var(--primary);
+}
+#kapar-root .text-on-primary {
+    color: var(--on-primary);
+}
+#kapar-root .p-standard-padding {
+    padding: var(--standard-padding);
+}
+#kapar-root .text-on-surface {
+    color: var(--on-surface);
+}
+#kapar-root .font-code-base {
+    font-family:
+        "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        monospace;
+}
+#kapar-root .text-code-base {
+    font-size: 13px;
+    line-height: 20px;
+}
+#kapar-root .font-label-caps {
+    font-family: "Inter", system-ui, sans-serif;
+}
+#kapar-root .text-label-caps {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+#kapar-root .font-headline {
+    font-family: "Inter", system-ui, sans-serif;
+}
+#kapar-root .text-headline {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+#kapar-root .rounded-xl {
+    border-radius: 0.75rem;
+}
+#kapar-root .rounded-lg {
+    border-radius: 0.5rem;
+}
+
+/* Custom Webkit scrollbar rules for internal settings layout */
+#kapar-root ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+#kapar-root ::-webkit-scrollbar-track {
+    background: transparent;
+}
+#kapar-root ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
+}
+#kapar-root ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+}
+
+/* Video Record Lens Animation overrides */
+#kapar-action-inner-path {
+    transition:
+        fill 0.2s ease,
+        opacity 0.2s ease;
+}
+.kapar-recording #kapar-action-inner-path {
+    fill: #ef4444 !important;
+    opacity: 1 !important;
+    animation: kapar-pulse-inner 1.5s infinite;
+}
+@keyframes kapar-pulse-inner {
+    0% {
+        transform: scale(1);
+        transform-origin: 128px 128px;
+    }
+    50% {
+        transform: scale(0.85);
+        transform-origin: 128px 128px;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: 128px 128px;
+    }
+}
