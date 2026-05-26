@@ -76,6 +76,24 @@ npm link vite-plugin-kapar
 
 ---
 
+## Known Issues
+
+- **Viewport-Fixed Elements (`position: fixed`):** Elements styled with `position: fixed` relative to the browser viewport may not appear inside the capture canvas. *Workaround: Wrap fixed elements or assign them `position: absolute` relative to your targeted application container.*
+- **Cross-Origin Content (CORS):** Elements containing cross-origin resources (such as external images, web fonts, or nested `<iframe>` contents) may fail to render or taint the canvas due to browser security boundaries.
+- **Experimental API Reliance:** Since this uses the experimental `drawElementImage` API, performance and rendering stability are tied to the browser's experimental canvas implementation.
+
+---
+
+## Roadmap
+
+- **Video Quality and Bitrate Controls:** Expose advanced configuration options for video capturing (e.g., custom bitrates, VP9/AV1 encoding formats) to maximize output recording quality.
+- **Enhanced Grease Pencil Tools:** Expand the annotation tool with vector shapes (arrows, rectangles, circles), an eraser brush, and adjustable brush opacity.
+- **Audio Capture Integration:** Add options to capture microphone audio track inputs alongside the video stream during session recording.
+- **Additional Image Export Formats:** Support exporting screenshots as `.webp` or `.jpeg` alongside standard `.png`.
+- **Preflight Style Refinements:** Optimize the inline CSS preflight reset to ensure broader layout rendering compatibility inside the Shadow DOM widget.
+
+---
+
 ## License
 
 MIT © [zerdalu](https://github.com/zerdalu)
